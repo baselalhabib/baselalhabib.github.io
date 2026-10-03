@@ -1,0 +1,98 @@
+:root {
+  --bg: #FCF9F4;
+  --ink: #1B1A17;
+  --mute: #6F6A61;
+  --line: #E8E2D7;
+  --card: #FFFFFF;
+  --tint: #F3ECDF;
+  --accent: #F2A65A;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Figtree, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; border-radius: 4px; }
+[hidden] { display: none !important; }
+.wrap { width: min(1040px, 100% - 3rem); margin-inline: auto; }
+
+.bar { display: flex; justify-content: space-between; align-items: center; padding: 1.25rem 0; }
+.brand { font-weight: 700; font-size: 1.15rem; text-decoration: none; letter-spacing: -0.01em; }
+.bar nav { display: flex; align-items: center; gap: 1.5rem; }
+.bar nav a { text-decoration: none; color: var(--mute); }
+.bar nav a:hover { color: var(--ink); }
+.bar nav .pill { color: var(--ink); border: 1px solid var(--ink); padding: 0.45rem 1rem; border-radius: 999px; font-weight: 600; }
+.bar nav .pill:hover { background: var(--ink); color: var(--bg); }
+
+.hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 2rem; align-items: center; padding: 4rem 0 5rem; }
+.hi { margin: 0 0 0.25rem; font-size: 1.2rem; font-weight: 600; color: var(--mute); }
+h1 { margin: 0 0 1.25rem; font-size: clamp(2.75rem, 7.5vw, 5rem); line-height: 1; letter-spacing: -0.04em; font-weight: 700; }
+.lead { max-width: 30ch; margin: 0 0 2rem; font-size: 1.25rem; line-height: 1.5; color: var(--mute); }
+.btn { display: inline-block; padding: 0.85rem 1.6rem; background: var(--ink); color: var(--bg); border-radius: 12px; font-weight: 600; text-decoration: none; transition: transform 0.2s; }
+.btn:hover { transform: translateY(-2px); }
+
+.doodle { width: 100%; max-width: 400px; justify-self: center; fill: none; stroke: var(--ink); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+.doodle .f { fill: var(--accent); stroke: none; }
+.doodle circle.n { fill: var(--bg); }
+
+.strip { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.75rem 2rem; padding: 1.5rem 0; border-block: 1px solid var(--line); color: #9A9387; font-weight: 700; font-size: 1.15rem; }
+
+.sec { display: grid; grid-template-columns: 200px 1fr; gap: 1rem 3rem; padding: 4.5rem 0; }
+.sec + .sec { border-top: 1px solid var(--line); }
+.tag { justify-self: start; align-self: start; margin: 0.6rem 0 0; padding: 0.25rem 0.8rem; background: var(--tint); border: 1px solid var(--line); border-radius: 999px; font-size: 0.85rem; font-weight: 600; }
+.big { margin: 0 0 1rem; font-size: clamp(1.75rem, 4vw, 2.5rem); line-height: 1.15; letter-spacing: -0.03em; font-weight: 600; }
+.sec p { max-width: 56ch; margin: 0 0 1rem; color: var(--mute); }
+.sec .big { max-width: 22ch; color: var(--ink); }
+
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.75rem 1.25rem; margin-top: 2rem; }
+.proj { display: block; text-decoration: none; }
+.thumb { aspect-ratio: 4 / 3; margin-bottom: 0.75rem; border-radius: 12px; background: var(--tint); transition: transform 0.3s; }
+.proj:hover .thumb { transform: translateY(-4px); }
+.proj h3 { margin: 0; font-size: 1.1rem; }
+.sec .proj p { margin: 0; font-size: 0.95rem; }
+.t1 { background: radial-gradient(circle at 30% 35%, color-mix(in srgb, var(--accent) 50%, transparent), transparent 60%), var(--tint); }
+.t2 { background: radial-gradient(circle at 70% 30%, color-mix(in srgb, var(--accent) 40%, transparent), transparent 60%), var(--tint); }
+.t3 { background: radial-gradient(circle at 35% 70%, color-mix(in srgb, var(--accent) 40%, transparent), transparent 60%), var(--tint); }
+.t4 { background: radial-gradient(circle at 70% 70%, color-mix(in srgb, var(--accent) 50%, transparent), transparent 60%), var(--tint); }
+
+.tabs { position: relative; display: flex; gap: 0.25rem; margin-top: 1.5rem; border-bottom: 1px solid var(--line); }
+.tabs button { font: inherit; font-weight: 600; font-size: 0.95rem; padding: 0.5rem 0.9rem; background: none; border: 0; color: var(--mute); cursor: pointer; }
+.tabs button[aria-selected="true"] { color: var(--ink); }
+.ul { position: absolute; left: 0; bottom: -1px; width: 0; height: 2px; background: var(--ink); transition: transform 0.3s cubic-bezier(0.2, 0.7, 0.2, 1), width 0.3s; }
+.chips { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.25rem; animation: show 0.4s ease; }
+.chips span { padding: 0.55rem 1rem; background: var(--card); border: 1px solid var(--line); border-radius: 8px; box-shadow: 0 1px 2px rgba(27, 26, 23, 0.06); font-weight: 500; transition: transform 0.2s; }
+.chips span:hover { transform: translateY(-2px); }
+@keyframes show { from { opacity: 0; transform: translateY(6px); } }
+
+.mail { display: inline-block; font-size: clamp(1.2rem, 3.5vw, 1.75rem); font-weight: 600; word-break: break-word; }
+.links { display: flex; gap: 1.25rem; margin: 1rem 0 0; }
+.foot { padding: 2rem 0 3rem; border-top: 1px solid var(--line); color: var(--mute); font-size: 0.9rem; }
+
+/* quiet motion: only runs when script.js adds .js */
+.js .doodle .d { stroke-dasharray: 1; stroke-dashoffset: 1; animation: draw 1.3s cubic-bezier(0.4, 0, 0.2, 1) forwards; animation-delay: calc(var(--i, 0) * 0.05s + 0.2s); }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.js .doodle .f { opacity: 0; animation: fade 1s ease 0.8s forwards; }
+@keyframes fade { to { opacity: 1; } }
+.js .hero > div > * { opacity: 0; transform: translateY(14px); animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) forwards; }
+.js .hero > div > :nth-child(2) { animation-delay: 0.1s; }
+.js .hero > div > :nth-child(3) { animation-delay: 0.2s; }
+.js .hero > div > :nth-child(4) { animation-delay: 0.3s; }
+@keyframes rise { to { opacity: 1; transform: none; } }
+.js .rv { opacity: 0; transform: translateY(12px); transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.js .rv.in { opacity: 1; transform: none; }
+
+@media (max-width: 800px) {
+  .hero { grid-template-columns: 1fr; padding: 2rem 0 3rem; }
+  .sec { grid-template-columns: 1fr; padding: 3rem 0; }
+  .bar nav a:not(.pill) { display: none; }
+}
+@media (max-width: 560px) { .grid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
